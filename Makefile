@@ -1,4 +1,4 @@
 runserver:
 		poetry run python manage.py runserver
 start:
-		poetry run python manage.py runserver 0.0.0.0:$(PORT)
+	poetry run gunicorn --workers=5 task_manager.wsgi
