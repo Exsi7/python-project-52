@@ -1,2 +1,2 @@
-web: gunicorn task_manager.wsgi --log-file -
-release: python manage.py collectstatic && python manage.py migrate
+web:  poetry gunicorn task_manager.wsgi --log-file -
+release: poetry python manage.py collectstatic && python manage.py migrate
