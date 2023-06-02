@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
-    'hexlet-code'
+    'hexlet_code'
 ]
 
 MIDDLEWARE = [
