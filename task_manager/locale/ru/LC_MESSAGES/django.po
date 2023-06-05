@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 23:18+0300\n"
+"POT-Creation-Date: 2023-06-06 00:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -273,10 +273,8 @@ msgid "Update task"
 msgstr "Обновить задачу"
 
 #: task_manager/templates/users/create.html:18
-#, fuzzy
-#| msgid "Registration"
-msgid "Register"
-msgstr "Зарегистрироваться"
+msgid "Registers"
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/users/delete.html:4
 msgid "Are you really want to delete user?"
@@ -323,6 +321,11 @@ msgstr "Вы залогинены"
 #: task_manager/views.py:26
 msgid "You are logged out"
 msgstr "Вы разлогинены"
+
+#, fuzzy
+#~| msgid "Sign out"
+#~ msgid "Sign up"
+#~ msgstr "Зарегистрировать"
 
 #~ msgid "Sign in"
 #~ msgstr "Вход"
