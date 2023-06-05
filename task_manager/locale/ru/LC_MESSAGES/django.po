@@ -276,7 +276,7 @@ msgstr "Обновить задачу"
 #, fuzzy
 #| msgid "Registration"
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрироваться"
 
 #: task_manager/templates/users/delete.html:4
 msgid "Are you really want to delete user?"
