@@ -10,6 +10,7 @@ from .models import User
 from .forms import UserForm
 from .mixins import UserHasPermissionMixin
 
+
 # Create your views here.
 class IndexView(ListView):
     template_name = "users/index.html"
@@ -20,8 +21,9 @@ class UserFormCreateView(SuccessMessageMixin, CreateView):
     model = User
     form_class = UserForm
     template_name = 'users/create.html'
-    success_message = _("User successfully registred")
     succes_url = reverse_lazy("login")
+    success_message = _("User successfully registred")
+    
 
 
 class UserUpdateView(UserHasPermissionMixin, SuccessMessageMixin, UpdateView):

@@ -17,4 +17,4 @@ class UserHasPermissionMixin(LoginRequiredMixin, UserPassesTestMixin):
             self.request,
             _("You have no rights to change or delete another user"),
         )
-        return redirect("users:index")
+        return redirect("users_index")
