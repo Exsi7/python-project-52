@@ -18,11 +18,33 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-link " href="#">{% translate "Users" %}</a>
-                <a class="nav-link" href="#">{% translate "log in" %}</a>
-                <a class="nav-link" href="#">{% translate "Registration" %}</a>
+                <a class="nav-link " href="{% url 'users_index' %}">{% translate "Users" %}</a>
+                {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'tasks_index' %}">{% translate "Tasks" %}</a>
+                <a class="nav-link" href="{% url 'statuses_index' %}">{% translate "Statuses" %}</a>
+                <a class="nav-link" href="{% url 'labels_index' %}">{% translate "Labels" %}</a>
+                <a class="nav-link" href="{% url 'logout' %}">{% translate "Sign out" %}</a>
+                {% else %}
+                <a class="nav-link" href="{% url 'login' %}">{% translate "log in" %}</a>
+                <a class="nav-link" href="{% url 'users_create' %}">{% translate "Registration" %}</a>
+                {% endif %}
               </div>
             </div>
           </nav>
+          <div>
+            {% if messages %}
+           <ul class="messages">
+            {% for message in messages %}
+            {% if message.tags == 'error' %}
+                {% bootstrap_alert message alert_type='danger' %}
+            {% else %}
+                {% bootstrap_alert message alert_type=message.tags %}
+            {% endif %}
+            {% endfor %}
+           </ul>
+            {% endif %}
+          </div>
+          {% block content %}
+          {% endblock %}
     </body>
 </html>

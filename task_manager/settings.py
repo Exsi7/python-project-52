@@ -45,6 +45,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'task_manager',
     'bootstrap4',
+    'task_manager.users',
+    'task_manager.statuses',
+    'task_manager.tasks',
+    'task_manager.labels',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -83,12 +88,19 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+if os.getenv('DATABASE_URL'):
+    db = dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
         conn_max_age=600,
         conn_health_checks=True,
     )
-}
-
+    DATABASES['default'].update(db)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -135,3 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, "locale"),
 ]
+
+
+AUTH_USER_MODEL = "users.User"
