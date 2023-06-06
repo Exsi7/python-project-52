@@ -202,7 +202,7 @@ msgstr "Действия"
 #: task_manager/templates/users/index.html:26
 #: task_manager/templates/users/update.html:19
 msgid "Update"
-msgstr "Обновить"
+msgstr "Изменить"
 
 #: task_manager/templates/labels/index.html:26
 #: task_manager/templates/statuses/index.html:26
