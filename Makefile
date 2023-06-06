@@ -21,3 +21,6 @@ makemessages:
 
 compilemessages:
 		poetry run django-admin compilemessages
+
+lint:
+		poetry run flake8
