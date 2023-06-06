@@ -1,2 +1,1 @@
-relaese: poetry run python manage.py makemigrate
-web: gunicorn task_manager.wsgi --log-file -
+web: python manage.py migrate && gunicorn task_manager.wsgi --log-file -

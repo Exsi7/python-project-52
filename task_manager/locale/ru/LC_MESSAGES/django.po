@@ -300,7 +300,7 @@ msgstr "У вас нет прав на изменение или удалени�
 
 #: task_manager/users/views.py:23
 msgid "User successfully registred"
-msgstr "Пользователь успешно зарегистрирова"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:32
 msgid "User successfully updated"
