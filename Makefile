@@ -14,7 +14,7 @@ migrate: makemigrations
 		poetry run python manage.py migrate
 
 start: migrate
-	poetry run gunicorn -w 5 -b 0.0.0.0:8000 task_manager.wsgi --log-file -
+	poetry run gunicorn task_manager.wsgi --log-file -
 
 makemessages:
 		poetry run django-admin makemessages -l ru
